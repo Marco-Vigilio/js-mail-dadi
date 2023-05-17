@@ -24,19 +24,27 @@ bottoneUno.addEventListener("click", function(){
 
         n_utente.append("dado utente: " + num_utente);
         n_pc.append("dado pc: " + num_pc);
+
         n_pc.prepend(n_utente);
         risultato.innerHTML = "VINTO";
         risultato.prepend(n_pc);
+
+        
+        n_utente.innerHTML = "";
+        n_pc.innerHTML = "";
         
     }
     else if( num_utente == num_pc){
         console.log("Pareggio");
         risultato.innerHTML = "PAREGGIO";
+
+
     }
     else{
         console.log("Hai perso");
         risultato.innerHTML = "PERSO";
     }
+    
     console.log();
 });
 
