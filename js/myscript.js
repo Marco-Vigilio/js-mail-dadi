@@ -21,11 +21,13 @@ bottoneUno.addEventListener("click", function(){
 
     if(num_utente > num_pc){
         console.log("Hai vinto");
-        risultato.innerHTML = "VINTO";
+
         n_utente.append("dado utente: " + num_utente);
-        n_pc.prepend("dado pc: " + num_pc);
+        n_pc.append("dado pc: " + num_pc);
         n_pc.prepend(n_utente);
+        risultato.innerHTML = "VINTO";
         risultato.prepend(n_pc);
+        
     }
     else if( num_utente == num_pc){
         console.log("Pareggio");
