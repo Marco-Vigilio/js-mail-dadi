@@ -19,12 +19,15 @@ bottoneUno.addEventListener("click", function(){
 
     if(num_utente > num_pc){
         console.log("Hai vinto");
+        document.getElementById("risultato").innerHTML = "VINTO";
     }
     else if( num_utente == num_pc){
         console.log("Pareggio");
+        document.getElementById("risultato").innerHTML = "PAREGGIO";
     }
     else{
         console.log("Hai perso");
+        document.getElementById("risultato").innerHTML = "PERSO";
     }
     console.log();
 });
@@ -58,16 +61,17 @@ bottoneDue.addEventListener("click", function(){
             verifica = true;
         }
         else{
-            console.log("Non Autorizzato: " + array[i] + " = " + email.value);
+            console.log("Non Autorizzato: " + array[i] + " != " + email.value);
         }
-        console.log();
     }
     console.log("verifica: " + verifica);
     if(verifica == true){
         console.log("ENTRA PURE");
+        document.getElementById("verifica_email").innerHTML = "ACCESSO CONSENTITO";
     }
     else{
         console.log("NON PUOI ENTRARE");
+        document.getElementById("verifica_email").innerHTML = "ACCESSO NEGATO";
     }
     console.log();
 }
