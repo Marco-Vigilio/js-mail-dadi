@@ -49,23 +49,26 @@ const array = ["ciao@ciao", "tony@tony.it", "tony.tony@boolean.it"];
 bottoneDue.addEventListener("click", function(){
     
     console.log("Email digitata: " + email.value);
-    let accettato;
-    let nonAccetato;
-    let verifica;
+    let verifica = false;
 
     for(let i = 0; i < array.length; i++){
-        console.log("Email accettata: " + array[i]);
+        
         if(email.value === array[i]){
-            console.log("Accettato");
-            verifica = "Accettato";
+            console.log("Email accettata: " + array[i] + " = " + email.value);
+            verifica = true;
         }
         else{
-            console.log("Non Autorizzato");
-            verifica = "Non accettato";
+            console.log("Non Autorizzato: " + array[i] + " = " + email.value);
         }
         console.log();
     }
-    console.log(verifica);
+    console.log("verifica: " + verifica);
+    if(verifica == true){
+        console.log("ENTRA PURE");
+    }
+    else{
+        console.log("NON PUOI ENTRARE");
+    }
     console.log();
 }
 );
