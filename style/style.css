@@ -20,6 +20,10 @@ main>* {
     padding: 1rem;
 }
 
+div{
+    border: 2px solid black;
+}
+
 label{
     margin-bottom: 1rem;
     display: block;
