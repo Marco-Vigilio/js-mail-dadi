@@ -22,27 +22,38 @@ bottoneUno.addEventListener("click", function(){
     if(num_utente > num_pc){
         console.log("Hai vinto");
 
-        n_utente.append("dado utente: " + num_utente);
+        n_utente.innerHTML = "";
+        n_pc.innerHTML = "";
+
+        n_utente.append("dado utente: " + num_utente);//inserire .innerHTML
         n_pc.append("dado pc: " + num_pc);
 
         n_pc.prepend(n_utente);
         risultato.innerHTML = "VINTO";
         risultato.prepend(n_pc);
-
-        /*
-        n_utente.innerHTML = "";
-        n_pc.innerHTML = "";
-        */
     }
     else if( num_utente == num_pc){
         console.log("Pareggio");
+
+        n_utente.innerHTML = "dado utente: " + num_utente;
+        n_pc.innerHTML = "dado pc: " + num_pc;
+
+        n_pc.prepend(n_utente);
         risultato.innerHTML = "PAREGGIO";
-
-
+        risultato.prepend(n_pc);
     }
     else{
         console.log("Hai perso");
+
+        n_utente.innerHTML = "";
+        n_pc.innerHTML = "";
+
+        n_utente.append("dado utente: " + num_utente);
+        n_pc.append("dado pc: " + num_pc);
+
+        n_pc.prepend(n_utente);
         risultato.innerHTML = "PERSO";
+        risultato.prepend(n_pc);
     }
 
     console.log();
@@ -69,27 +80,34 @@ const array = ["ciao@ciao", "tony@tony.it", "tony.tony@boolean.it"];
 bottoneDue.addEventListener("click", function(){
     
     console.log("Email digitata: " + email.value);
-    let verifica = false;
 
-    for(let i = 0; i < array.length; i++){
-        
-        if(email.value === array[i]){
-            console.log("Email accettata: " + array[i] + " = " + email.value);
-            verifica = true;
+    if((email.value).includes("@") == true){
+
+        let verifica = false;
+
+        for(let i = 0; i < array.length; i++){
+            
+            if(email.value === array[i]){
+                console.log("Email accettata: " + array[i] + " = " + email.value);
+                verifica = true;
+            }
+            else{
+                console.log("Non Autorizzato: " + array[i] + " != " + email.value);
+            }
+        }
+        console.log("verifica: " + verifica);
+        if(verifica == true){
+            console.log("ENTRA PURE");
+            document.getElementById("verifica_email").innerHTML = "ACCESSO CONSENTITO";
         }
         else{
-            console.log("Non Autorizzato: " + array[i] + " != " + email.value);
+            console.log("NON PUOI ENTRARE");
+            document.getElementById("verifica_email").innerHTML = "ACCESSO NEGATO";
         }
-    }
-    console.log("verifica: " + verifica);
-    if(verifica == true){
-        console.log("ENTRA PURE");
-        document.getElementById("verifica_email").innerHTML = "ACCESSO CONSENTITO";
+        console.log();
     }
     else{
-        console.log("NON PUOI ENTRARE");
-        document.getElementById("verifica_email").innerHTML = "ACCESSO NEGATO";
+        alert("Attenzione, inserisci una email");
     }
-    console.log();
 }
 );

@@ -44,14 +44,14 @@ input, button, select{
     background-color: rgb(255, 255, 186);
 }
 
-.rosso{
+.vinto{
+    color: green;
+}
+
+.perso{
     color: red;
 }
 
-.giallo{
-    color: yellow;
-}
-
-.verde{
-    color: green;
+.pari{
+    color: orangered;
 }
