@@ -7,27 +7,33 @@ in base a chi fa il punteggio più alto.
 let num_utente;
 let num_pc;
 const bottoneUno = document.getElementById("lancio_dadi");
-
+let n_utente = document.createElement("p");
+let n_pc = document.createElement("p");
+const risultato = document.querySelector("#risultato");
 
 bottoneUno.addEventListener("click", function(){
 
-    num_utente = Math.floor(Math.random() * 7) + 1;
+    num_utente = Math.floor(Math.random() * 6) + 1;
     console.log("Dado utente: " + num_utente);
 
-    num_pc = Math.floor(Math.random() * 7) + 1;
+    num_pc = Math.floor(Math.random() * 6) + 1;
     console.log("Dado pc: " + num_pc);
 
     if(num_utente > num_pc){
         console.log("Hai vinto");
-        document.getElementById("risultato").innerHTML = "VINTO";
+        risultato.innerHTML = "VINTO";
+        n_utente.append("dado utente: " + num_utente);
+        n_pc.prepend("dado pc: " + num_pc);
+        n_pc.prepend(n_utente);
+        risultato.prepend(n_pc);
     }
     else if( num_utente == num_pc){
         console.log("Pareggio");
-        document.getElementById("risultato").innerHTML = "PAREGGIO";
+        risultato.innerHTML = "PAREGGIO";
     }
     else{
         console.log("Hai perso");
-        document.getElementById("risultato").innerHTML = "PERSO";
+        risultato.innerHTML = "PERSO";
     }
     console.log();
 });
