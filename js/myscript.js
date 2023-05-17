@@ -15,11 +15,9 @@ bottoneUno.addEventListener("click", function(){
 
     num_utente = Math.floor(Math.random() * 6) + 1;
     console.log("Dado utente: " + num_utente);
-    n_utente.append("dado utente: " + num_utente);
 
     num_pc = Math.floor(Math.random() * 6) + 1;
     console.log("Dado pc: " + num_pc);
-    n_pc.append("dado pc: " + num_pc);
 
     if(num_utente > num_pc){
         console.log("Hai vinto");
