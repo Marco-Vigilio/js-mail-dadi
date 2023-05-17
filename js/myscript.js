@@ -1,8 +1,8 @@
 /*
-Generare un numero random da 1 a 6, 
-sia per il giocatore sia per il computer.
-Stabilire il vincitore, 
-in base a chi fa il punteggio più alto.
+*Generare un numero random da 1 a 6, 
+*sia per il giocatore sia per il computer.
+*Stabilire il vincitore, 
+*in base a chi fa il punteggio più alto.
 */
 let num_utente;
 let num_pc;
@@ -15,9 +15,11 @@ bottoneUno.addEventListener("click", function(){
 
     num_utente = Math.floor(Math.random() * 6) + 1;
     console.log("Dado utente: " + num_utente);
+    n_utente.append("dado utente: " + num_utente);
 
     num_pc = Math.floor(Math.random() * 6) + 1;
     console.log("Dado pc: " + num_pc);
+    n_pc.append("dado pc: " + num_pc);
 
     if(num_utente > num_pc){
         console.log("Hai vinto");
@@ -29,10 +31,10 @@ bottoneUno.addEventListener("click", function(){
         risultato.innerHTML = "VINTO";
         risultato.prepend(n_pc);
 
-        
+        /*
         n_utente.innerHTML = "";
         n_pc.innerHTML = "";
-        
+        */
     }
     else if( num_utente == num_pc){
         console.log("Pareggio");
@@ -44,14 +46,15 @@ bottoneUno.addEventListener("click", function(){
         console.log("Hai perso");
         risultato.innerHTML = "PERSO";
     }
-    
+
     console.log();
 });
+
 
 /*
 * Chiedi all’utente la sua email,
 * controlla che sia nella lista di chi può accedere,
-  stampa un messaggio appropriato sull’esito del controllo.
+* stampa un messaggio appropriato sull’esito del controllo.
 
 Tenete presente che non è permesso utilizzare funzioni
  built-in degli array come 
